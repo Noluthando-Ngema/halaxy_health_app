@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="10dp" android:gravity="center_vertical">
+    <TextView android:id="@+id/txtRow" android:layout_width="0dp" android:layout_weight="0.5" android:text="1" android:textSize="11sp"/>
+    <TextView android:id="@+id/txtName" android:layout_width="0dp" android:layout_weight="2" android:text="John Doe" android:textSize="11sp" android:textStyle="bold"/>
+    <TextView android:id="@+id/txtDateTime" android:layout_width="0dp" android:layout_weight="2" android:text="2026-05-23 10:00 AM" android:textSize="10sp"/>
+    <TextView android:id="@+id/txtStatus" android:layout_width="0dp" android:layout_weight="1.2" android:text="Pending" android:textSize="9sp" android:padding="4dp" android:gravity="center"/>
+    <LinearLayout android:id="@+id/layoutAction" android:layout_width="0dp" android:layout_weight="1.8" android:orientation="horizontal">
+        <Button android:id="@+id/btnApprove" android:layout_width="wrap_content" android:layout_height="24dp" android:text="Approve" android:textSize="8sp" android:backgroundTint="#4CAF50" android:textColor="#FFFFFF" android:visibility="gone"/>
+        <Button android:id="@+id/btnCancel" android:layout_width="wrap_content" android:layout_height="24dp" android:text="Cancel" android:textSize="8sp" android:backgroundTint="#D32F2F" android:textColor="#FFFFFF" android:layout_marginStart="4dp" android:visibility="gone"/>
+        <Button android:id="@+id/btnComplete" android:layout_width="wrap_content" android:layout_height="24dp" android:text="Complete" android:textSize="8sp" android:backgroundTint="#2196F3" android:textColor="#FFFFFF" android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

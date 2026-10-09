@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#F5F5F5">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#7B1113"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/txtDoctorName"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Dr. Sarah Smith"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:text="23 May 2026"
+            android:textColor="#7B1113"
+            android:background="#FFF"
+            android:padding="6dp"
+            android:textSize="11sp"/>
+    </LinearLayout>
+
+    <!-- stats cards -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="80dp"
+                    android:background="@drawable/bg_small_card"
+                    android:padding="10dp"
+                    android:layout_marginEnd="6dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/txtTodayCount"
+                        android:text="4"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#7B1113"/>
+                    <TextView
+                        android:text="Today's Appointments"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="80dp"
+                    android:background="@drawable/bg_small_card"
+                    android:padding="10dp"
+                    android:layout_marginStart="6dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/txtPendingCount"
+                        android:text="2"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#7B1113"/>
+                    <TextView
+                        android:text="Pending"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- filter tabs - All, Pending, Approved, Completed, Cancelled -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:id="@+id/filterTabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/tabAll"
+                        android:text="All"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_tab_selected"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:layout_marginEnd="6dp"/>
+                    <Button
+                        android:id="@+id/tabPending"
+                        android:text="Pending"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_tab_unselected"
+                        android:textSize="11sp"
+                        android:layout_marginEnd="6dp"/>
+                    <Button
+                        android:id="@+id/tabApproved"
+                        android:text="Approved"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_tab_unselected"
+                        android:textSize="11sp"
+                        android:layout_marginEnd="6dp"/>
+                    <Button
+                        android:id="@+id/tabCompleted"
+                        android:text="Completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_tab_unselected"
+                        android:textSize="11sp"
+                        android:layout_marginEnd="6dp"/>
+                    <Button
+                        android:id="@+id/tabCancelled"
+                        android:text="Cancelled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_tab_unselected"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- table header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#EEEEEE"
+                android:padding="8dp"
+                android:layout_marginTop="12dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:text="#"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="Name"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="Date Time"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:text="Status"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.8"
+                    android:text="Action"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recAppointments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

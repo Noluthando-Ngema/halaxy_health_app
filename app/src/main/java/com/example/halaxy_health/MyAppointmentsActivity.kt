@@ -58,5 +58,7 @@ class MyAppointmentsActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnBookFirst).setOnClickListener {
             startActivity(Intent(this, PatientDashboardActivity::class.java))
         }
+        // apply dark/light mode
+        ThemeHelper.applyTheme(this)
     }
 }

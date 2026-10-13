@@ -55,7 +55,7 @@
             android:layout_height="32dp"
             android:text="Book Now"
             android:background="@drawable/bg_button_maroon"
-            android:textColor="white"
+            android:textColor="#FFFFFF"
             android:textSize="11sp"
             android:layout_marginTop="10dp"/>
     </LinearLayout>

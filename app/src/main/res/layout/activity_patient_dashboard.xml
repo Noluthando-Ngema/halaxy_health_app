@@ -38,7 +38,7 @@
                 android:textSize="18sp"/>
             <TextView
                 android:text="  Make a Booking"
-                android:textColor="white"
+                android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="16sp"/>
         </LinearLayout>
@@ -66,6 +66,7 @@
         android:orientation="horizontal"
         android:weightSum="2"
         android:layout_marginTop="16dp">
+        <!-- appointments card -->
         <LinearLayout
             android:id="@+id/cardMyAppointments"
             android:layout_width="0dp"
@@ -81,6 +82,7 @@
                 android:textStyle="bold"
                 android:textColor="#000"/>
         </LinearLayout>
+        <!-- make a booking -->
         <LinearLayout
             android:id="@+id/cardMakeBooking2"
             android:layout_width="0dp"
@@ -95,6 +97,60 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="#000"/>
+        </LinearLayout>
+        <!-- learning centre card -->
+        <LinearLayout
+            android:id="@+id/cardLearningCentre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_white_rounded"
+            android:padding="16dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <!-- icon -->
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#FFF0F0"
+                android:gravity="center"
+                android:text="📚"
+                android:textSize="18sp" />
+
+            <!-- text -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Learning Centre"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trusted health articles for you"
+                    android:textSize="11sp"
+                    android:textColor="#718096"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+            <!-- arrow -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="›"
+                android:textSize="20sp"
+                android:textColor="#7B1113" />
         </LinearLayout>
     </LinearLayout>
 
@@ -128,8 +184,6 @@
                 android:textStyle="bold"
                 android:textColor="#000"/>
         </LinearLayout>
-        <!-- Empty to keep layout balanced if you removed Track Progress -->
-        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="80dp" android:layout_marginStart="6dp"/>
     </LinearLayout>
 
 </LinearLayout>

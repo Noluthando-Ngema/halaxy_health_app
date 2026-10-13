@@ -31,22 +31,20 @@ class PatientDashboardActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnScheduleNow).setOnClickListener {
-            startActivity(Intent(this, BookingActivity::class.java))
+            startActivity(Intent(this, BookAppointmentActivity::class.java))
         }
         findViewById<LinearLayout>(R.id.cardMyAppointments).setOnClickListener {
             startActivity(Intent(this, MyAppointmentsActivity::class.java))
         }
         findViewById<LinearLayout>(R.id.cardMakeBooking2).setOnClickListener {
-            startActivity(Intent(this, BookingActivity::class.java))
+            startActivity(Intent(this, BookAppointmentActivity::class.java))
         }
         findViewById<LinearLayout>(R.id.cardEditProfile).setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
-        btnScheduleNow.setOnClickListener {
-            startActivity(Intent(this, FindDoctorActivity::class.java)) // NOT BookingActivity
-        }
-        cardMakeBooking2.setOnClickListener {
-            startActivity(Intent(this, FindDoctorActivity::class.java))
+        findViewById<View>(R.id.cardLearningCentre).setOnClickListener {
+            // open learning centre
+            startActivity(Intent(this, LearningCentreActivity::class.java))
         }
 
         // apply dark/light mode

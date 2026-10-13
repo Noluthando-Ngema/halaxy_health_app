@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- single time cell -->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/txtTime"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:gravity="center"
+    android:text="09:00 AM"
+    android:textSize="11sp"
+    android:textColor="#000000"
+    android:background="@drawable/bg_time_unselected"
+    android:layout_margin="4dp" />

@@ -22,6 +22,7 @@ class FindDoctorAdapter(private var list: List<Doctor>, val onBook: (Doctor) -> 
     // TODO: bind data to views
     override fun onBindViewHolder(h: VH, pos: Int) {
         val d = list[pos]
+        h.img.setImageResource(R.drawable.doctor_placeholder)
         h.txtName.text = "Dr. ${d.fullName}"
         h.txtSpecialty.text = d.specialty.uppercase()
         h.txtRating.text = when(pos){0->"★ 4.9";1->"★ 4.8";else->"★ 5.0"}

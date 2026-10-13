@@ -110,7 +110,7 @@
             android:layout_height="48dp"
             android:text="SAVE CHANGES"
             android:background="@drawable/bg_button_maroon"
-            android:textColor="white"
+            android:textColor="#FFFFFF"
             android:layout_marginTop="20dp"/>
         <Button
             android:id="@+id/btnLogout"

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- payment screen -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F5F8"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtPaymentInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consultation fee: R500"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:textColor="#666666" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_white_rounded"
+        android:padding="16dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:text="CARD DETAILS"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#718096" />
+
+        <EditText
+            android:id="@+id/edtCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:hint="Card Number"
+            android:inputType="number"
+            android:background="@drawable/bg_input_light"
+            android:layout_marginTop="12dp"
+            android:padding="10dp"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/edtExpiry"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="44dp"
+                android:hint="MM/YY"
+                android:background="@drawable/bg_input_light"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:layout_marginEnd="6dp" />
+
+            <EditText
+                android:id="@+id/edtCvv"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="44dp"
+                android:hint="CVV"
+                android:inputType="numberPassword"
+                android:background="@drawable/bg_input_light"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:layout_marginStart="6dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnPay"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Pay R500"
+            android:background="@drawable/bg_button_maroon"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

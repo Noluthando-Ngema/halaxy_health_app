@@ -54,7 +54,7 @@
                 android:layout_height="44dp"
                 android:text="Search"
                 android:background="@drawable/bg_button_maroon"
-                android:textColor="white"
+                android:textColor="#FFFFFF"
                 android:textSize="12sp"/>
         </LinearLayout>
 

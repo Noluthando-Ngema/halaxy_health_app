@@ -36,6 +36,11 @@ import kotlinx.coroutines.flow.Flow
 
         @Query("UPDATE appointments SET status = :status WHERE id = :id")
         suspend fun updateStatus(id: Int, status: String)
+        @Query("SELECT time FROM appointments WHERE doctorEmail = :doctorEmail AND date = :date AND status != 'Cancelled'")
+        suspend fun getBookedTimesForDoctorOnDate(doctorEmail: String, date: String): List<String>
+
+        @Insert
+        suspend fun insertAndGetId(appointment: Appointment): Long
 
         @Query("SELECT * FROM appointments WHERE doctorEmail = :email AND (:filter = 'All' OR status = :filter) ORDER BY dateTime ASC")
         fun getFilteredForDoctor(email: String, filter: String): Flow<List<Appointment>>

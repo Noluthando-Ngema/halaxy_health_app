@@ -25,7 +25,7 @@
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
+            android:layout_height="48dp"
             android:text="Logout"
             android:textSize="12sp"
             android:background="@drawable/bg_button_outline" />
@@ -41,7 +41,7 @@
             android:id="@+id/btnTabDoctors"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:text="Pending Doctors"
             android:background="@drawable/bg_tab_selected"
             android:textSize="12sp" />
@@ -50,7 +50,7 @@
             android:id="@+id/btnTabPatients"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:text="Pending Patients"
             android:background="@drawable/bg_tab_unselected"
             android:layout_marginStart="8dp"

@@ -79,17 +79,23 @@
                 android:orientation="vertical"
                 android:padding="14dp">
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="🕒 Recently Viewed"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:textColor="#000"/>
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:id="@+id/txtRecent1"
                     android:text="• Dr. Sarah Jenkins (GP)"
                     android:textSize="11sp"
                     android:layout_marginTop="8dp"/>
                 <TextView
                     android:id="@+id/txtRecent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="• Dr. Michael Chen (Physio)"
                     android:textSize="11sp"
                     android:layout_marginTop="4dp"/>
@@ -103,11 +109,15 @@
                 android:padding="14dp"
                 android:layout_marginTop="12dp">
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="NEED URGENT CARE?"
                     android:textSize="11sp"
                     android:textStyle="bold"
                     android:textColor="#7B1113"/>
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="If you are experiencing a medical emergency, please call 000 immediately or visit your closest emergency department."
                     android:textSize="11sp"
                     android:textColor="#7B1113"

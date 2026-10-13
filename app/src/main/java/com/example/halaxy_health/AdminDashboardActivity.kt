@@ -158,5 +158,6 @@ class AdminDashboardActivity : AppCompatActivity() {
             holder.btnApprove.setOnClickListener { onApprove(item) }
             holder.btnDecline.setOnClickListener { onDecline(item) }
         }
+        
     }
 }

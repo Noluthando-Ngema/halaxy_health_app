@@ -133,6 +133,15 @@
             android:background="@drawable/bg_button_maroon"
             android:textColor="#FFFFFF"
             android:layout_marginTop="16dp" />
+        <!-- back to dashboard button -->
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Back to Dashboard"
+            android:background="@drawable/bg_button_outline"
+            android:textColor="#7B1113"
+            android:layout_marginTop="16dp" />
 
     </LinearLayout>
 

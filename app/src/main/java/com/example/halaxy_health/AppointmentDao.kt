@@ -42,6 +42,6 @@ import kotlinx.coroutines.flow.Flow
         @Insert
         suspend fun insertAndGetId(appointment: Appointment): Long
 
-        @Query("SELECT * FROM appointments WHERE doctorEmail = :email AND (:filter = 'All' OR status = :filter) ORDER BY dateTime ASC")
+        @Query("SELECT * FROM appointments WHERE doctorEmail = :email AND (:filter = 'All' OR status = :filter) ORDER BY date ASC")
         fun getFilteredForDoctor(email: String, filter: String): Flow<List<Appointment>>
     }

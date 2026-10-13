@@ -16,6 +16,8 @@
         android:textStyle="bold"
         android:textColor="#000000"/>
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Your health journey at a glance."
         android:textSize="12sp"
         android:textColor="#666666"
@@ -34,15 +36,21 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="📅"
                 android:textSize="18sp"/>
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="  Make a Booking"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="16sp"/>
         </LinearLayout>
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Find specialists and clinics in real-time."
             android:textColor="#E0C0C0"
             android:textSize="11sp"
@@ -77,6 +85,8 @@
             android:gravity="center"
             android:layout_marginEnd="6dp">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="📋 My Appointments"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -93,6 +103,8 @@
             android:gravity="center"
             android:layout_marginStart="6dp">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="🏥 Make a Booking"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -179,6 +191,8 @@
             android:orientation="vertical"
             android:gravity="center">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="⚙️ Edit Profile"
                 android:textSize="12sp"
                 android:textStyle="bold"

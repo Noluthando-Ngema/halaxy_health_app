@@ -136,6 +136,11 @@ class LearningCentreActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnOpenChannel).setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/@halaxycommunity")))
         }
+        // apply dark/light mode
+        ThemeHelper.applyTheme(this)
+        findViewById<Button>(R.id.btnBack).setOnClickListener {
+            startActivity(Intent(this, PatientDashboardActivity::class.java))
+        }
     }
 
     private fun filterArticles(search: String = "") {
@@ -150,4 +155,6 @@ class LearningCentreActivity : AppCompatActivity() {
         }
         articleAdapter.updateList(filtered)
     }
+
+
 }

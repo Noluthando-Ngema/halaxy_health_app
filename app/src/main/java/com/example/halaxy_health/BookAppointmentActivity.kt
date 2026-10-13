@@ -90,7 +90,6 @@ class BookAppointmentActivity : AppCompatActivity() {
                     doctorName = selectedDoctorName,
                     time = selectedTime,
                     date = selectedDateStr,
-                    dateTime = "$selectedDateStr $selectedTime",
                     department = specialty,
                     status = "Pending",
                     amount = 500.0,

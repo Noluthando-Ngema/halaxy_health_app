@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:padding="24dp">
@@ -72,84 +72,47 @@
                 android:layout_marginBottom="16dp"/>
 
             <!-- email -->
-            <LinearLayout
+            <EditText
+                android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@drawable/bg_input"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:padding="12dp"
-                android:layout_marginBottom="12dp">
+                android:layout_marginBottom="4dp"
+                android:textSize="13sp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="✉"
-                    android:textSize="16sp"/>
-
-                <EditText
-                    android:id="@+id/edtEmail"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:hint="patient@gmail.com"
-                    android:inputType="textEmailAddress"
-                    android:textSize="13sp"
-                    android:layout_marginStart="8dp"/>
-
-                <TextView
-                    android:id="@+id/txtEmailErrorLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#D32F2F"
-                    android:textSize="11sp"
-                    android:visibility="gone"
-                    android:layout_marginBottom="8dp"/>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/txtEmailErrorLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#D32F2F"
+                android:textSize="11sp"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
 
             <!-- password -->
-            <LinearLayout
+            <EditText
+                android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@drawable/bg_input"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
+                android:hint="Password"
+                android:inputType="textPassword"
                 android:padding="12dp"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="4dp"
+                android:textSize="13sp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🔒"
-                    android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/txtPasswordErrorLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#D32F2F"
+                android:textSize="11sp"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
 
-                <EditText
-                    android:id="@+id/edtPassword"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:textSize="13sp"
-                    android:layout_marginStart="8dp"/>
-
-                <TextView
-                    android:id="@+id/btnTogglePass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="👁"
-                    android:textSize="16sp"/>
-                <TextView
-                    android:id="@+id/txtPasswordErrorLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#D32F2F"
-                    android:textSize="11sp"
-                    android:visibility="gone"
-                    android:layout_marginBottom="8dp"/>
-            </LinearLayout>
             <TextView
                 android:id="@+id/txtLoginError"
                 android:layout_width="match_parent"
@@ -173,24 +136,32 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:gravity="center"
                 android:layout_marginTop="12dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Don't have an account? "
-                    android:textSize="11sp"/>
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-                <TextView
-                    android:id="@+id/txtGoSignup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Register here"
-                    android:textSize="11sp"
-                    android:textColor="#D32F2F"
-                    android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Don't have an account? "
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/txtGoSignup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Register here"
+                        android:textSize="11sp"
+                        android:textColor="#D32F2F"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
                 <!-- admin button -->
                 <Button
                     android:id="@+id/btnAdminLogin"
@@ -204,7 +175,7 @@
 
                 <!-- doctor signup link -->
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center"

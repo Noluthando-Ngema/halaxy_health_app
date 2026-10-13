@@ -14,7 +14,8 @@ data class Appointment(
     val date: String, // 25 May 2026
     val department: String, // General Practice
     var status: String = "Pending", // Pending, Approved, Completed
-    val amount: Double = 500.0 // Default to R500
+    val amount: Double = 500.0, // Default to R500
+    val reason: String = "General Consultation"
 ) {
     val dateTime: String
         get() = "$date $time"

@@ -59,16 +59,16 @@
 
                 <Button
                     android:id="@+id/btnPrev"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:text="‹"
                     android:background="@drawable/bg_outline_small"
                     android:textColor="#7B1113" />
 
                 <Button
                     android:id="@+id/btnNext"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:text="›"
                     android:layout_marginStart="6dp"
                     android:background="@drawable/bg_outline_small"

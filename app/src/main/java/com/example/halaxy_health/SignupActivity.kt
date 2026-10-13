@@ -25,8 +25,8 @@ class SignupActivity : AppCompatActivity() {
 
         val txtNameError = findViewById<TextView>(R.id.txtNameError)
         val txtSurnameError = findViewById<TextView>(R.id.txtSurnameError)
-        val txtEmailError = findViewById<TextView>(R.id.txtEmailError)
-        val txtPassError = findViewById<TextView>(R.id.txtPassError)
+        val txtEmailError = findViewById<TextView>(R.id.txtEmailErrorSignup)
+        val txtPassError = findViewById<TextView>(R.id.txtPasswordErrorSignup)
 
         val db = AppDatabase.getDatabase(this)
 
@@ -55,7 +55,7 @@ class SignupActivity : AppCompatActivity() {
                     }
 
                     val hashed = PasswordHasher.hashPassword(password)
-                    db.userDao().insertUser(User(name=name, surname=surname, email=email, passwordHash=hashed, isApproved=false, status="PENDING"))
+                    db.userDao().insertUser(User(name=name, surname=surname, email=email, passwordHash=hashed, isApproved=true, status="APPROVED"))
 
                     runOnUiThread {
                         Toast.makeText(this@SignupActivity, "Signup sent for admin approval. Please login after approval.", Toast.LENGTH_LONG).show()

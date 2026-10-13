@@ -1,96 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF9F0F0"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, Alex"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+    <TextView
+        android:text="Your health journey at a glance."
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- make a booking -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_maroon_large"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:text="📅"
+                android:textSize="18sp"/>
+            <TextView
+                android:text="  Make a Booking"
+                android:textColor="white"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+        </LinearLayout>
+        <TextView
+            android:text="Find specialists and clinics in real-time."
+            android:textColor="#E0C0C0"
+            android:textSize="11sp"
+            android:layout_marginTop="6dp"/>
+        <!-- schedule button -->
+        <Button
+            android:id="@+id/btnScheduleNow"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Schedule Now"
+            android:textColor="#4A0D12"
+            android:background="@drawable/bg_white_button"
+            android:textSize="11sp"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+
+    <!-- navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="16dp">
+        <LinearLayout
+            android:id="@+id/cardMyAppointments"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_small_card"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="6dp">
+            <TextView
+                android:text="📋 My Appointments"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/cardMakeBooking2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_small_card"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginStart="6dp">
+            <TextView
+                android:text="🏥 Make a Booking"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
-
-        <!-- header -->
-        <TextView
-            android:id="@+id/txtHello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello, Alex"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:textColor="#1A1A1A"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Your health journey at a glance."
-            android:textSize="13sp"
-            android:textColor="#777777"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="20dp"/>
-
-        <!-- make a booking card - dark red like button -->
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="12dp">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_booking_card"
+            android:id="@+id/cardPaymentHistory"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_small_card"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:elevation="4dp">
-
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📅" android:textSize="18sp" android:background="#FFFFFF30" android:padding="4dp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Make a Booking" android:textSize="18sp" android:textStyle="bold" android:textColor="#FFFFFF" android:layout_marginStart="8dp"/>
-            </LinearLayout>
-
+            android:gravity="center"
+            android:layout_marginEnd="6dp"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:id="@+id/cardEditProfile"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_small_card"
+            android:orientation="vertical"
+            android:gravity="center">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Find specialists and clinics in real-time."
-                android:textColor="#E0C0C0"
+                android:text="⚙️ Edit Profile"
                 android:textSize="12sp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"/>
-
-            <Button
-                android:id="@+id/btnScheduleNow"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="Schedule Now"
-                android:textSize="11sp"
-                android:textColor="#7B1113"
-                android:background="@drawable/bg_white_button"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"/>
-
+                android:textStyle="bold"
+                android:textColor="#000"/>
         </LinearLayout>
-
-        <!-- grid 2x2 -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="16dp" android:weightSum="2">
-
-            <LinearLayout android:id="@+id/cardAppointments" android:layout_width="0dp" android:layout_weight="1" android:layout_height="90dp" android:background="@drawable/bg_small_card" android:orientation="vertical" android:gravity="center" android:layout_marginEnd="8dp" android:elevation="2dp" android:clickable="true" android:focusable="true">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📋 My Appointments" android:textSize="13sp" android:textStyle="bold" android:textColor="#1A1A1A" android:gravity="center"/>
-            </LinearLayout>
-
-            <LinearLayout android:id="@+id/cardProgress" android:layout_width="0dp" android:layout_weight="1" android:layout_height="90dp" android:background="@drawable/bg_small_card" android:orientation="vertical" android:gravity="center" android:layout_marginStart="8dp" android:elevation="2dp" android:clickable="true" android:focusable="true">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📈 Track Progress" android:textSize="13sp" android:textStyle="bold" android:textColor="#1A1A1A" android:gravity="center"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="16dp" android:weightSum="2">
-
-            <LinearLayout android:id="@+id/cardPayment" android:layout_width="0dp" android:layout_weight="1" android:layout_height="90dp" android:background="@drawable/bg_small_card" android:orientation="vertical" android:gravity="center" android:layout_marginEnd="8dp" android:elevation="2dp" android:clickable="true" android:focusable="true">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💳 Payment History" android:textSize="13sp" android:textStyle="bold" android:textColor="#1A1A1A" android:gravity="center"/>
-            </LinearLayout>
-
-            <LinearLayout android:id="@+id/cardEditProfile" android:layout_width="0dp" android:layout_weight="1" android:layout_height="90dp" android:background="@drawable/bg_small_card" android:orientation="vertical" android:gravity="center" android:layout_marginStart="8dp" android:elevation="2dp" android:clickable="true" android:focusable="true">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚙️ Edit Profile" android:textSize="13sp" android:textStyle="bold" android:textColor="#1A1A1A" android:gravity="center"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- bottom space -->
-        <View android:layout_width="match_parent" android:layout_height="40dp"/>
-
+        <!-- Empty to keep layout balanced if you removed Track Progress -->
+        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="80dp" android:layout_marginStart="6dp"/>
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>

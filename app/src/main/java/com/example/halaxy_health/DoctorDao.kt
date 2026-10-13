@@ -3,6 +3,7 @@ package com.example.halaxy_health
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface DoctorDao {
@@ -14,6 +15,8 @@ interface DoctorDao {
 
     @Query("SELECT * FROM doctors WHERE status = 'PENDING'")
     suspend fun getPendingDoctors(): List<Doctor>
+    @Query("SELECT * FROM doctors WHERE isApproved = 1")
+    fun getApprovedDoctors(): Flow<List<Doctor>>
 
     @Query("SELECT * FROM doctors")
     suspend fun getAllDoctors(): List<Doctor>

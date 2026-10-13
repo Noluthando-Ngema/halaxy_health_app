@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_small_card"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/imgDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/doctor_placeholder"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Dr. Sarah Jenkins"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+            <TextView
+                android:id="@+id/txtRating"
+                android:text="★ 4.9"
+                android:textSize="10sp"
+                android:textColor="#7B1113"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtSpecialty"
+            android:text="GENERAL PRACTITIONER"
+            android:textSize="9sp"
+            android:textColor="#888"
+            android:layout_marginTop="2dp"/>
+        <TextView
+            android:id="@+id/txtNext"
+            android:text="🕒 Next: Today 2:30 PM"
+            android:textSize="10sp"
+            android:textColor="#333"
+            android:layout_marginTop="6dp"/>
+        <Button android:id="@+id/btnBookNow"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Book Now"
+            android:background="@drawable/bg_button_maroon"
+            android:textColor="white"
+            android:textSize="11sp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</LinearLayout>

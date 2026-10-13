@@ -3,6 +3,7 @@ package com.example.halaxy_health
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 
 @Dao
 interface UserDao {
@@ -23,6 +24,8 @@ interface UserDao {
 
     @Query("UPDATE users SET isApproved = :approved, status = :status WHERE id = :id")
     suspend fun updateApproval(id: Int, approved: Boolean, status: String)
+    @Update
+    suspend fun updateUser(user: User)
 
     @Query("DELETE FROM users WHERE id = :id")
     suspend fun deleteUser(id: Int)

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootSettings">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:id="@+id/txtTitle"
+            android:text="Settings"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtThemeLabel"
+            android:text="THEME"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <Button android:id="@+id/btnLight"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:text="Light Mode"
+                android:layout_marginEnd="6dp"/>
+            <Button
+                android:id="@+id/btnDark"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:text="Dark Mode"
+                android:layout_marginStart="6dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtPersonal"
+            android:text="PERSONAL INFO"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_input_light"
+            android:hint="Name"
+            android:layout_marginTop="8dp"/>
+        <EditText
+            android:id="@+id/edtSurname"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_input_light"
+            android:hint="Surname"
+            android:layout_marginTop="8dp"/>
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_input_light"
+            android:hint="Email"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/txtEmailErr"
+            android:textColor="#D32F2F"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/txtSecurity"
+            android:text="SECURITY"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_input_light"
+            android:hint="New Password (leave blank to keep)"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/txtPassErr"
+            android:textColor="#D32F2F"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/txtPayment"
+            android:text="PAYMENT METHOD"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+        <Spinner
+            android:id="@+id/spinPayment"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="SAVE CHANGES"
+            android:background="@drawable/bg_button_maroon"
+            android:textColor="white"
+            android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="LOGOUT"
+            android:background="@drawable/bg_button_outline"
+            android:textColor="#4A0D12"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -3,6 +3,8 @@ package com.example.halaxy_health
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,20 +30,26 @@ class PatientDashboardActivity : AppCompatActivity() {
             }
         }
 
-        findViewById<View>(R.id.btnScheduleNow).setOnClickListener {
+        findViewById<Button>(R.id.btnScheduleNow).setOnClickListener {
             startActivity(Intent(this, BookingActivity::class.java))
         }
-        findViewById<View>(R.id.cardAppointments).setOnClickListener {
+        findViewById<LinearLayout>(R.id.cardMyAppointments).setOnClickListener {
             startActivity(Intent(this, MyAppointmentsActivity::class.java))
         }
-        findViewById<View>(R.id.cardProgress).setOnClickListener {
-            Toast.makeText(this, "Track Progress coming soon", Toast.LENGTH_SHORT).show()
+        findViewById<LinearLayout>(R.id.cardMakeBooking2).setOnClickListener {
+            startActivity(Intent(this, BookingActivity::class.java))
         }
-        findViewById<View>(R.id.cardPayment).setOnClickListener {
-            Toast.makeText(this, "Payment History coming soon", Toast.LENGTH_SHORT).show()
+        findViewById<LinearLayout>(R.id.cardEditProfile).setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
-        findViewById<View>(R.id.cardEditProfile).setOnClickListener {
-            startActivity(Intent(this, EditProfileActivity::class.java))
+        btnScheduleNow.setOnClickListener {
+            startActivity(Intent(this, FindDoctorActivity::class.java)) // NOT BookingActivity
         }
+        cardMakeBooking2.setOnClickListener {
+            startActivity(Intent(this, FindDoctorActivity::class.java))
+        }
+
+        // apply dark/light mode
+        ThemeHelper.applyTheme(this)
     }
 }

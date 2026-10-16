@@ -53,5 +53,8 @@ class DoctorLoginActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.txtGoSignup).setOnClickListener {
             startActivity(Intent(this, DoctorSignupActivity::class.java))
         }
+        findViewById<Button>(R.id.btnAdminLogin).setOnClickListener {
+            startActivity(Intent(this, AdminLoginActivity::class.java))
+        }
     }
 }

@@ -10,12 +10,16 @@
         android:padding="20dp">
         <TextView
             android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Settings"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/txtThemeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="THEME"
             android:textSize="10sp"
             android:textStyle="bold"
@@ -42,6 +46,8 @@
 
         <TextView
             android:id="@+id/txtPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="PERSONAL INFO"
             android:textSize="10sp"
             android:textStyle="bold"
@@ -69,11 +75,15 @@
             android:layout_marginTop="8dp"/>
         <TextView
             android:id="@+id/txtEmailErr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textColor="#D32F2F"
             android:textSize="11sp"
             android:visibility="gone"/>
         <TextView
             android:id="@+id/txtSecurity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="SECURITY"
             android:textSize="10sp"
             android:textStyle="bold"
@@ -88,12 +98,16 @@
             android:layout_marginTop="8dp"/>
         <TextView
             android:id="@+id/txtPassErr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textColor="#D32F2F"
             android:textSize="11sp"
             android:visibility="gone"/>
 
         <TextView
             android:id="@+id/txtPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="PAYMENT METHOD"
             android:textSize="10sp"
             android:textStyle="bold"

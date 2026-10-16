@@ -9,8 +9,8 @@ data class Doctor(
     val name: String = "",
     val surname: String = "",
     val email: String = "",
-    val speciality: String = "General Physician", // FIXED
-    val passwordHash: String = "", // FIXED
+    val speciality: String = "General Physician",
+    val passwordHash: String = "",
     val isApproved: Boolean = false,
     val status: String = "PENDING"
 )

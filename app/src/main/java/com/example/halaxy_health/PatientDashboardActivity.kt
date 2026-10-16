@@ -19,6 +19,12 @@ class PatientDashboardActivity : AppCompatActivity() {
         val txtHello = findViewById<TextView>(R.id.txtHello)
         val prefs = getSharedPreferences("halaxy_session", MODE_PRIVATE)
         val email = prefs.getString("logged_email", null)
+        if (email == null) {
+            // you are not logged in as patient, go to patient login
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+            return
+        }
 
         if (email != null) {
             val db = AppDatabase.getDatabase(this)
@@ -39,7 +45,7 @@ class PatientDashboardActivity : AppCompatActivity() {
         findViewById<LinearLayout>(R.id.cardMakeBooking2).setOnClickListener {
             startActivity(Intent(this, BookAppointmentActivity::class.java))
         }
-        findViewById<LinearLayout>(R.id.cardEditProfile).setOnClickListener {
+        findViewById<LinearLayout>(R.id.cardEditProfile)?.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
         findViewById<View>(R.id.cardLearningCentre).setOnClickListener {

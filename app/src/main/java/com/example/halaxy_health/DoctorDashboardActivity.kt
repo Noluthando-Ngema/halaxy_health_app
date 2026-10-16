@@ -1,5 +1,6 @@
 package com.example.halaxy_health
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -25,6 +26,20 @@ class DoctorDashboardActivity : AppCompatActivity() {
         email = getSharedPreferences("halaxy_session", MODE_PRIVATE).getString("logged_doctor", "sarah.smith@halaxy.com")!!
         val today = SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(Date())
 
+        findViewById<TextView>(R.id.txtDate).text = today
+
+        lifecycleScope.launch {
+            db.doctorDao().getDoctorByEmail(email)?.let { doc ->
+                runOnUiThread {
+                    findViewById<TextView>(R.id.txtDoctorName).text = doc.fullName.ifEmpty { "Dr. ${doc.name} ${doc.surname}" }
+                }
+            }
+        }
+
+        findViewById<Button>(R.id.btnDoctorSettings).setOnClickListener {
+            startActivity(Intent(this, DoctorSettingsActivity::class.java))
+        }
+
         val tabs = mapOf(
             findViewById<Button>(R.id.tabAll) to "All",
             findViewById<Button>(R.id.tabPending) to "Pending",
@@ -45,6 +60,7 @@ class DoctorDashboardActivity : AppCompatActivity() {
 
         selectTab("All")
         observeStats(today)
+        ThemeHelper.applyTheme(this)
     }
 
     private fun observeStats(today: String) {

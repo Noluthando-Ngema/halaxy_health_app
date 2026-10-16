@@ -44,8 +44,8 @@ class FindDoctorActivity : AppCompatActivity() {
                 adapter = FindDoctorAdapter(combined) { doctor ->
                     // save recently viewed
                     getSharedPreferences("recent_prefs", MODE_PRIVATE).edit().putString("recent_1", "Dr. ${doctor.fullName} (${doctor.specialty.take(2)})").apply()
-                    // go to find doctor activity
-                    val intent = Intent(this@FindDoctorActivity, FindDoctorActivity::class.java)
+                    // go to book appointment activity
+                    val intent = Intent(this@FindDoctorActivity, BookAppointmentActivity::class.java)
                     intent.putExtra("doctorEmail", doctor.email)
                     intent.putExtra("doctorName", "Dr. ${doctor.fullName}")
                     intent.putExtra("specialty", doctor.specialty)

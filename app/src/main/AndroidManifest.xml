@@ -58,6 +58,10 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".DoctorSettingsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".MyAppointmentsActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

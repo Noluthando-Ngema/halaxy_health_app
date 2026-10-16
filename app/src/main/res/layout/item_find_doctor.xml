@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="160dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/bg_small_card"
-    android:layout_marginEnd="10dp"
     android:layout_marginBottom="10dp">
 
     <ImageView
@@ -28,24 +27,31 @@
                 android:id="@+id/txtName"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:text="Dr. Sarah Jenkins"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="#000"/>
             <TextView
                 android:id="@+id/txtRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="★ 4.9"
                 android:textSize="10sp"
                 android:textColor="#7B1113"/>
         </LinearLayout>
         <TextView
             android:id="@+id/txtSpecialty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="GENERAL PRACTITIONER"
             android:textSize="9sp"
             android:textColor="#888"
             android:layout_marginTop="2dp"/>
         <TextView
             android:id="@+id/txtNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="🕒 Next: Today 2:30 PM"
             android:textSize="10sp"
             android:textColor="#333"

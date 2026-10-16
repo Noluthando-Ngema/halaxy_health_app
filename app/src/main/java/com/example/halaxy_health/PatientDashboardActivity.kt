@@ -31,7 +31,7 @@ class PatientDashboardActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnScheduleNow).setOnClickListener {
-            startActivity(Intent(this, BookAppointmentActivity::class.java))
+            startActivity(Intent(this, FindDoctorActivity::class.java))
         }
         findViewById<LinearLayout>(R.id.cardMyAppointments).setOnClickListener {
             startActivity(Intent(this, MyAppointmentsActivity::class.java))

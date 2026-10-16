@@ -31,6 +31,16 @@
             android:background="#FFF"
             android:padding="6dp"
             android:textSize="11sp"/>
+        <Button
+            android:id="@+id/btnDoctorSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="⚙️ Settings"
+            android:textColor="#7B1113"
+            android:background="#FFF"
+            android:textSize="11sp"
+            android:layout_marginStart="8dp"
+            android:paddingHorizontal="8dp"/>
     </LinearLayout>
 
     <!-- stats cards -->

@@ -3,6 +3,7 @@ package com.example.halaxy_health
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -23,6 +24,9 @@ interface DoctorDao {
 
     @Query("UPDATE doctors SET isApproved = :approved, status = :status WHERE id = :id")
     suspend fun updateApproval(id: Int, approved: Boolean, status: String)
+
+    @Update
+    suspend fun updateDoctor(doctor: Doctor)
 
     @Query("DELETE FROM doctors WHERE id = :id")
     suspend fun deleteDoctor(id: Int)

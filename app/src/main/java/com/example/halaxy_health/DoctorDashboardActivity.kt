@@ -31,7 +31,7 @@ class DoctorDashboardActivity : AppCompatActivity() {
         lifecycleScope.launch {
             db.doctorDao().getDoctorByEmail(email)?.let { doc ->
                 runOnUiThread {
-                    findViewById<TextView>(R.id.txtDoctorName).text = doc.fullName.ifEmpty { "Dr. ${doc.name} ${doc.surname}" }
+                    findViewById<TextView>(R.id.txtDoctorName).text = "Dr. ${doc.name} ${doc.surname}"
                 }
             }
         }

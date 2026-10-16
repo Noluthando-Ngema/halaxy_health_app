@@ -40,7 +40,7 @@ class DoctorSignupActivity : AppCompatActivity() {
             val surname = edtSurname.text.toString().trim()
             val email = edtEmail.text.toString().trim()
             val spec = edtSpec.text.toString().trim()
-            val pass = edtPass.text.toString()
+            val pass = edtPass.text.toString() // don't trim password
 
             var hasError = false
             if (name.isEmpty()) { txtNameErr.text = "Name required"; txtNameErr.visibility = View.VISIBLE; hasError = true }
@@ -50,30 +50,39 @@ class DoctorSignupActivity : AppCompatActivity() {
             if (hasError) return@setOnClickListener
 
             lifecycleScope.launch {
-                if (db.doctorDao().getDoctorByEmail(email) != null || db.userDao().checkEmailExists(email) != null) {
-                    runOnUiThread { txtEmailErr.text = "Email already signed up."; txtEmailErr.visibility = View.VISIBLE }
-                    return@launch
-                }
+                try {
+                    val existingDoctor = db.doctorDao().getDoctorByEmail(email)
+                    val existingUser = db.userDao().checkEmailExists(email)
 
-                val hashed = PasswordHasher.hashPassword(pass)
+                    if (existingDoctor != null || existingUser != null) {
+                        runOnUiThread { txtEmailErr.text = "Email already signed up."; txtEmailErr.visibility = View.VISIBLE }
+                        return@launch
+                    }
 
-                db.doctorDao().insertDoctor(
-                    Doctor(
+                    val hashed = PasswordHasher.hashPassword(pass)
+
+                    val newDoctor = Doctor(
                         name = name,
                         surname = surname,
-                        fullName = "Dr. $name $surname",
                         email = email,
+                        speciality = spec.ifEmpty { "General Physician" },
                         passwordHash = hashed,
-                        specialization = spec.ifEmpty { "General Physician" },
                         isApproved = false,
                         status = "PENDING"
                     )
-                )
 
-                runOnUiThread {
-                    Toast.makeText(this@DoctorSignupActivity, "Doctor signup sent for admin approval", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this@DoctorSignupActivity, DoctorLoginActivity::class.java))
-                    finish()
+                    db.doctorDao().insertDoctor(newDoctor)
+
+                    runOnUiThread {
+                        Toast.makeText(this@DoctorSignupActivity, "Doctor signup sent for admin approval", Toast.LENGTH_LONG).show()
+                        startActivity(Intent(this@DoctorSignupActivity, DoctorLoginActivity::class.java))
+                        finish()
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    runOnUiThread {
+                        Toast.makeText(this@DoctorSignupActivity, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+                    }
                 }
             }
         }

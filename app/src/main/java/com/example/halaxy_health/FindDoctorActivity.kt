@@ -34,21 +34,21 @@ class FindDoctorActivity : AppCompatActivity() {
 
                 // Merge with default demo data from screenshot if not in DB yet
                 val demo = listOf(
-                    Doctor(fullName="Sarah Jenkins", ahpraNumber="MED001", specialty="GENERAL PRACTITIONER", clinicName="Central Clinic", email="sarah.jenkins@halaxy.com", passwordHash="", isApproved=true, status="APPROVED"),
-                    Doctor(fullName="Michael Chen", ahpraNumber="MED002", specialty="PHYSIOTHERAPIST", clinicName="Physio Plus", email="michael.chen@halaxy.com", passwordHash="", isApproved=true, status="APPROVED"),
-                    Doctor(fullName="Elena Rodriguez", ahpraNumber="MED003", specialty="CLINICAL PSYCHOLOGIST", clinicName="Mind Care", email="elena.rodriguez@halaxy.com", passwordHash="", isApproved=true, status="APPROVED")
+                    Doctor(name="Sarah", surname="Jenkins", speciality="GENERAL PRACTITIONER", email="sarah.jenkins@halaxy.com", passwordHash="", isApproved=true, status="APPROVED"),
+                    Doctor(name="Michael", surname="Chen", speciality="PHYSIOTHERAPIST", email="michael.chen@halaxy.com", passwordHash="", isApproved=true, status="APPROVED"),
+                    Doctor(name="Elena", surname="Rodriguez", speciality="CLINICAL PSYCHOLOGIST", email="elena.rodriguez@halaxy.com", passwordHash="", isApproved=true, status="APPROVED")
                 )
                 val combined = (doctors + demo).distinctBy { it.email }
 
                 allDoctors = combined
                 adapter = FindDoctorAdapter(combined) { doctor ->
                     // save recently viewed
-                    getSharedPreferences("recent_prefs", MODE_PRIVATE).edit().putString("recent_1", "Dr. ${doctor.fullName} (${doctor.specialty.take(2)})").apply()
+                    getSharedPreferences("recent_prefs", MODE_PRIVATE).edit().putString("recent_1", "Dr. ${doctor.name} ${doctor.surname} (${doctor.speciality.take(2)})").apply()
                     // go to book appointment activity
                     val intent = Intent(this@FindDoctorActivity, BookAppointmentActivity::class.java)
                     intent.putExtra("doctorEmail", doctor.email)
-                    intent.putExtra("doctorName", "Dr. ${doctor.fullName}")
-                    intent.putExtra("specialty", doctor.specialty)
+                    intent.putExtra("doctorName", "Dr. ${doctor.name} ${doctor.surname}")
+                    intent.putExtra("specialty", doctor.speciality)
                     startActivity(intent)
                 }
                 rec.adapter = adapter
@@ -62,9 +62,8 @@ class FindDoctorActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnSearch).setOnClickListener {
             val query = edtSearch.text.toString().lowercase()
             val filtered = allDoctors.filter {
-                it.fullName.lowercase().contains(query) ||
-                        it.specialty.lowercase().contains(query) ||
-                        it.clinicName.lowercase().contains(query)
+                "${it.name} ${it.surname}".lowercase().contains(query) ||
+                        it.speciality.lowercase().contains(query)
             }
             adapter.updateList(filtered)
         }

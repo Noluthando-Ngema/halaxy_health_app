@@ -71,9 +71,9 @@ class AdminDashboardActivity : AppCompatActivity() {
                     items.add(
                         ApprovalItem(
                             id = doc.id,
-                            name = if (doc.fullName.isNotEmpty()) doc.fullName else "Dr. ${doc.name} ${doc.surname}",
+                            name = "Dr. ${doc.name} ${doc.surname}",
                             email = doc.email,
-                            details = "Specialization: ${if (doc.specialization.isNotEmpty()) doc.specialization else doc.specialty}",
+                            details = "Specialization: ${doc.speciality}",
                             isDoctor = true
                         )
                     )

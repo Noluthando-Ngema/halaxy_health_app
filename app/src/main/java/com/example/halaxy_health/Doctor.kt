@@ -8,13 +8,9 @@ data class Doctor(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String = "",
     val surname: String = "",
-    val fullName: String = "",
-    val ahpraNumber: String = "",
-    val specialty: String = "",
-    val clinicName: String = "",
-    val email: String,
-    val passwordHash: String,
-    val specialization: String = "General",
+    val email: String = "",
+    val speciality: String = "General Physician", // FIXED
+    val passwordHash: String = "", // FIXED
     val isApproved: Boolean = false,
     val status: String = "PENDING"
 )

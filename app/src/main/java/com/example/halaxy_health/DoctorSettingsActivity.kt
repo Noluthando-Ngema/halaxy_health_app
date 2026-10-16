@@ -86,7 +86,6 @@ class DoctorSettingsActivity : AppCompatActivity() {
                     val updated = doc.copy(
                         name = newName,
                         surname = newSurname,
-                        fullName = "Dr. $newName $newSurname",
                         email = newEmail,
                         passwordHash = hashed
                     )
